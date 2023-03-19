@@ -166,7 +166,114 @@ def reversed_list(lst1, lst2):
 print(reversed_list([1, 2, 3], [3, 2, 1]))
 print(reversed_list([1, 5, 3], [3, 2, 1]))
 
+
+
+#######################
+# --- Control Flow ---#
+#######################
+
+# 1. Create a method that tests whether the result of taking the power of one number to another number provides an answer which is greater than 5000
+
+def large_power(base, exponent):
+    return True if base ** exponent > 5000 else False
+
+print(large_power(2, 13))
+
+# 2. function will accept a parameter called budget which describes our spending limit. The next four parameters describe what we are spending our money on. We need to sum all of our spendings and compare it to the budget.
+
+def over_budget(budget, food_bill, electricity_bill, internet_bill, rent):
+    return True if budget < sum([food_bill, electricity_bill, internet_bill, rent]) else False
+
+print(over_budget(100, 20, 30, 10, 40))
+print(over_budget(80, 20, 30, 10, 30))
+
+# 3 determine if one number is twice as large as another number. 
+
+def twice_as_large(num1, num2):
+    return True if num1 > num2 * 2 else False
+
+print(twice_as_large(10, 5))
+print(twice_as_large(11, 5))
+
+# 4. Divisible By Ten
+
+def divisible_by_ten(num):
+    return True if num % 10 == 0 else False
+    
+# 5 check if the sum of two inputs does not equal ten.
+
+def not_sum_to_ten(num1, num2):
+    return True if num1 + num2 != 10 else False
+
+# 6. test if a number falls within a certain range. 
+
+def in_range(num, lower, upper):
+    return True if num in range(lower, (upper + 1)) else False
+
+print(in_range(10, 10, 10))
+# should print True
+print(in_range(5, 10, 20))
+# should print False
+
+#7. write a program that checks different names and determines if they are equal. 
+
+def same_name(your_name, my_name):
+    return True if your_name == my_name else False
+
+print(same_name("Colby", "Colby"))
+# should print True
+print(same_name("Tina", "Amber"))
+# should print False
+
+#8. create an example of a function that contains a contradiction.
+
+def always_false(num):
+    if num < 10 and num > 10:
+        return True
+    elif num > 10 and num < 10:
+        return True
+    else:
+        return False
+    
+print(always_false(0))
+
+# 9 create a function that will help us rate movies. Our function will split the ratings into different ranges and tell the user how the movie was based on the movie’s rating
+
+def movie_review(rating):
+    if rating <= 5:
+        return "Avoid at all costs!"
+    elif rating < 9:
+        return "This one was fun."
+    elif rating < 10:
+        return "Outstanding!"
+    
+print(movie_review(9))
+
+# 10 select which number from three input values is the greatest using conditional statements
+
+def max_num(num1, num2, num3):
+    if num1 > num2 and num1 > num3:
+        return num1
+    elif num2 > num1 and num2 > num3:
+        return num2
+    elif num3 > num1 and num3 > num2:
+        return num3
+    else:
+        return "It's a tie!"
+
+print(max_num(-10, 0, 10))
+# should print 10
+print(max_num(-10, 5, 5))
+
+
 ####################
 # --- Functions ---#
 ####################
 
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+    
+print(factorial(5))
